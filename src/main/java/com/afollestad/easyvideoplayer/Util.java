@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.AttrRes;
+
+import androidx.annotation.AttrRes;
+
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -45,24 +47,6 @@ class Util {
     TypedArray a = context.getTheme().obtainStyledAttributes(new int[] {attr});
     try {
       return a.getColor(0, fallback);
-    } finally {
-      a.recycle();
-    }
-  }
-
-  static Drawable resolveDrawable(Context context, @AttrRes int attr) {
-    return resolveDrawable(context, attr, null);
-  }
-
-  private static Drawable resolveDrawable(
-      Context context,
-      @AttrRes int attr,
-      @SuppressWarnings("SameParameterValue") Drawable fallback) {
-    TypedArray a = context.getTheme().obtainStyledAttributes(new int[] {attr});
-    try {
-      Drawable d = a.getDrawable(0);
-      if (d == null && fallback != null) d = fallback;
-      return d;
     } finally {
       a.recycle();
     }

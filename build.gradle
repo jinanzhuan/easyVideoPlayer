@@ -30,7 +30,7 @@ android {
 
 dependencies {
 
-    compile 'com.android.support:appcompat-v7:27.0.1'
-    compile 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+    //compile 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
 }
 
